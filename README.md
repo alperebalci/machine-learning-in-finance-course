@@ -66,3 +66,9 @@ The material is intended for educational and non-commercial use. See `LICENSE` f
 ## Disclaimer
 
 This repository is for educational purposes only. It does not constitute investment advice, financial advice, credit advice, or a recommendation to trade, lend, borrow, or purchase any financial instrument. Historical performance, model estimates, and backtests do not guarantee future results.
+
+## Continuous integration coverage
+
+The [deterministic foundations CI](.github/workflows/foundations-ci.yml) executes both Python examples in `01_python_financial_analysis/` on Python 3.11 and 3.12. It validates generated CSV content and time-series example reproducibility without external market-data downloads.
+
+**Scope:** this CI does not yet test the higher-level ML, deep learning, trading, XGBoost or TensorFlow chapters. The course's full requirements are intentionally not installed in this small smoke suite; these other modules require separate task-specific, data-safe validation.
