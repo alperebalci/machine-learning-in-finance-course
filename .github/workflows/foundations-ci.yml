@@ -1,0 +1,42 @@
+name: Deterministic finance foundations CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "01_python_financial_analysis/**"
+      - "tests/**"
+      - ".github/workflows/foundations-ci.yml"
+  pull_request:
+    paths:
+      - "01_python_financial_analysis/**"
+      - "tests/**"
+      - ".github/workflows/foundations-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  finance-foundations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install only first-chapter requirements
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy>=1.26,<3" "pandas>=2.2,<3" "pytest>=8,<10"
+          python -m pip check
+      - name: Compile deterministic teaching modules
+        run: python -m compileall -q 01_python_financial_analysis tests
+      - name: Execute and validate both teaching examples
+        run: python -m pytest -q tests/test_finance_foundations.py
