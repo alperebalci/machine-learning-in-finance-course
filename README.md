@@ -7,6 +7,7 @@ This repository is the primary umbrella repository for this Jors Academy researc
 
 ### Included projects
 
+- [`multiperiod-portfolio-rebalancing`](projects/multiperiod-portfolio-rebalancing/) — scenario-tree stochastic portfolio allocation with transaction costs, nonanticipative rebalancing, and CVaR of terminal losses
 - [`mean-variance-portfolio-cardinality-optimization`](projects/mean-variance-portfolio-cardinality-optimization/)
 
 Each consolidated project keeps its own files and a `SOURCE_REPOSITORY.md` provenance record. The snapshot preserves the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
