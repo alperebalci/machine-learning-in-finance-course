@@ -59,6 +59,31 @@ The FinBERT example has optional dependencies that are not required by the rest 
 pip install transformers torch
 ```
 
+## Optional research-library examples
+
+These small exercises are independent of the course-wide dependencies and existing CI; install each optional library only if you want to run that example. Both generate reproducible **synthetic** data, so they do not require API keys or a live market-data connection.
+
+| Library | Course module | Added example | Purpose |
+| --- | --- | --- | --- |
+| [vectorbt](https://vectorbt.dev/) | Algorithmic trading | [Cost-aware holdout backtest](08_algorithmic_trading/12_vectorbt_cost_aware_backtest.py) | Delayed moving-average crossover signals, 5-bp order fees, 5-bp slippage, 30% holdout, and buy-and-hold comparison |
+| [pytimetk](https://business-science.github.io/pytimetk/) | Financial data processing | [Grouped financial features](02_financial_data_processing/pytimetk_financial_features.py) | Per-asset historical-return lags, rolling volatility proxy, and a separate next-period prediction label |
+
+```bash
+# Optional vectorbt exercise:
+python -m pip install vectorbt
+python 08_algorithmic_trading/12_vectorbt_cost_aware_backtest.py
+
+# Optional pytimetk exercise:
+python -m pip install pytimetk
+python 02_financial_data_processing/pytimetk_financial_features.py
+```
+
+The **pytimetk** example deliberately creates lagged features *within each asset*, then builds the next-period return as a **target, not a feature**. Any supervised model subsequently trained on this output should use chronological, preferably walk-forward, validation. The **vectorbt** example applies crossover decisions one observation later to avoid same-bar look-ahead. Both are educational illustrations, not evidence of trading profitability; live execution, exchange connectivity, and realistic liquidity modeling are outside their scope.
+
+The [`yfinance` data-ingestion example](02_financial_data_processing/yahoo_finance.py) and `yfinance` dependency already exist. It requires network access and is subject to the data provider's terms; it is intentionally not used by these offline examples.
+
+**Validation boundary:** syntax, synthetic-data invariants, and calls against lightweight API-compatible test doubles were checked; full runs with installed `vectorbt` and `pytimetk` are not covered by current CI.
+
 ## Educational Use
 
 The material is intended for educational and non-commercial use. See `LICENSE` for details.
