@@ -28,6 +28,7 @@ This repository focuses on practical, reproducible implementations of financial 
 - `08_algorithmic_trading/` — execution, market microstructure, transaction costs, backtesting, momentum, mean reversion, statistical arbitrage, pairs trading, and HFT concepts
 - `09_nlp_in_finance/` — financial news collection, preprocessing, sentiment, NER, topic modeling, embeddings, FinBERT, GPT-style workflows, and text-driven trading signals
 - `data/` — notes about data sources and local datasets
+- [`projects/multiperiod-portfolio-rebalancing/`](projects/multiperiod-portfolio-rebalancing/) — optional standalone OR research model: two-stage portfolio decisions, transaction costs, and CVaR
 
 ## Important Methodology Notes
 
