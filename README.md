@@ -8,6 +8,7 @@ This repository is the primary umbrella repository for this Jors Academy researc
 ### Included projects
 
 - [`mean-variance-portfolio-cardinality-optimization`](projects/mean-variance-portfolio-cardinality-optimization/)
+- [`credit-offer-predict-then-optimize`](projects/credit-offer-predict-then-optimize/) — synthetic offer acceptance/PD estimation with chronological validation and open-source HiGHS MILP decision-making
 
 Each consolidated project keeps its own files and a `SOURCE_REPOSITORY.md` provenance record. The snapshot preserves the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
 <!-- portfolio-umbrella:end -->
