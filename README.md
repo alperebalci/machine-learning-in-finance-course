@@ -7,7 +7,6 @@ This repository is the primary umbrella repository for this Jors Academy researc
 
 ### Included projects
 
-- [`multiperiod-portfolio-rebalancing`](projects/multiperiod-portfolio-rebalancing/) — scenario-tree stochastic portfolio allocation with transaction costs, nonanticipative rebalancing, and CVaR of terminal losses
 - [`mean-variance-portfolio-cardinality-optimization`](projects/mean-variance-portfolio-cardinality-optimization/)
 
 Each consolidated project keeps its own files and a `SOURCE_REPOSITORY.md` provenance record. The snapshot preserves the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
@@ -29,6 +28,7 @@ This repository focuses on practical, reproducible implementations of financial 
 - `08_algorithmic_trading/` — execution, market microstructure, transaction costs, backtesting, momentum, mean reversion, statistical arbitrage, pairs trading, and HFT concepts
 - `09_nlp_in_finance/` — financial news collection, preprocessing, sentiment, NER, topic modeling, embeddings, FinBERT, GPT-style workflows, and text-driven trading signals
 - `data/` — notes about data sources and local datasets
+- [`projects/multiperiod-portfolio-rebalancing/`](projects/multiperiod-portfolio-rebalancing/) — optional standalone OR research model: two-stage portfolio decisions, transaction costs, and CVaR
 
 ## Important Methodology Notes
 
