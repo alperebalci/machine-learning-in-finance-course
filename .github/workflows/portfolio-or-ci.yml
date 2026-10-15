@@ -1,0 +1,37 @@
+name: Portfolio OR research CI
+
+on:
+  push:
+    paths:
+      - "projects/multiperiod-portfolio-rebalancing/**"
+      - "tests/test_multiperiod_portfolio.py"
+      - ".github/workflows/portfolio-or-ci.yml"
+  pull_request:
+    paths:
+      - "projects/multiperiod-portfolio-rebalancing/**"
+      - "tests/test_multiperiod_portfolio.py"
+      - ".github/workflows/portfolio-or-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-portfolio-or:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install numerical test dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pytest>=8,<10"
+      - name: Verify example and tests
+        run: |
+          python -m compileall -q projects/multiperiod-portfolio-rebalancing tests/test_multiperiod_portfolio.py
+          python projects/multiperiod-portfolio-rebalancing/model.py
+          python -m pytest -q tests/test_multiperiod_portfolio.py
