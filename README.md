@@ -25,7 +25,7 @@ This repository focuses on practical, reproducible implementations of financial 
 - `05_deep_learning_in_finance/` — neural networks, CNNs, RNNs, LSTMs, GRUs, and attention
 - `06_portfolio_management/` — portfolio analytics, optimization, clustering, neural allocation, and reinforcement learning
 - `07_risk_management/` — VaR, expected shortfall, stress testing, Monte Carlo, scenario analysis, and ML-based risk assessment
-- `08_algorithmic_trading/` — execution, market microstructure, transaction costs, backtesting, momentum, mean reversion, statistical arbitrage, pairs trading, and HFT concepts
+- `08_algorithmic_trading/` — execution, market microstructure, transaction costs, backtesting, momentum, mean reversion, statistical arbitrage, pairs trading, and HFT concepts; includes an [optional PyBroker ML walk-forward exercise](08_algorithmic_trading/README.md#optional-pybroker-ml-walk-forward-exercise)
 - `09_nlp_in_finance/` — financial news collection, preprocessing, sentiment, NER, topic modeling, embeddings, FinBERT, GPT-style workflows, and text-driven trading signals
 - `data/` — notes about data sources and local datasets
 
